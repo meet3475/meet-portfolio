@@ -5,7 +5,7 @@ import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { Stars, Float, Text, MeshDistortMaterial } from "@react-three/drei";
 import * as THREE from "three";
 
-const ORBIT_TAGS = ["NG", "RX", "NX", "TS", "3JS"];
+const ORBIT_TAGS = ["NX", "RX", "TS", "JS", "NODE"];
 
 function OrbitNode({ index, total, label }: { index: number; total: number; label: string }) {
   const angle = (index / total) * Math.PI * 2;

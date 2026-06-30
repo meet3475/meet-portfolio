@@ -8,7 +8,7 @@ import { fadeUp, staggerContainer, viewportOnce } from "@/lib/motion";
 export default function Services() {
   return (
     <section id="services" className="container-px py-28">
-      <SectionHeading eyebrow="05 — Services" title="What I can take off your plate" />
+      <SectionHeading eyebrow="06 — Services" title="What I can take off your plate" />
 
       <motion.div
         initial="hidden"

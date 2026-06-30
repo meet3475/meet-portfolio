@@ -21,24 +21,23 @@ export default function About() {
         >
           <motion.p custom={0} variants={fadeUp}>
             I&apos;m <span className="text-text font-medium">{profile.name}</span>, a frontend
-            developer based in {profile.location}. I spend most of my time inside Angular and
-            React codebases, turning product requirements into interfaces that hold up under
-            real use.
+            developer based in {profile.location}. I&apos;m always picking up new tools, I work
+            well in a team, and I&apos;d rather ship something solid than something flashy that
+            breaks under real use.
           </motion.p>
           <motion.p custom={1} variants={fadeUp}>
-            Lately I&apos;ve been pulling Three.js and Next.js into that mix &mdash; not as a
-            trend, but because motion and structure both matter to how an interface feels.
+            Next.js and React are where I spend most of my time, often paired with a CMS like
+            Optimizely or Znode so the people who own the content can update it without me.
           </motion.p>
           <motion.p custom={2} variants={fadeUp}>
-            Outside of client work, I keep a running list of small experiments: WebGL scenes,
-            animation studies, and anything that makes a browser tab feel less like a form and
-            more like a place.
+            Lately I&apos;ve been pulling Three.js into personal builds &mdash; not as a trend,
+            but because motion and structure both matter to how an interface feels.
           </motion.p>
 
           <motion.div custom={3} variants={fadeUp} className="grid grid-cols-2 sm:grid-cols-4 gap-6 pt-6">
             {stats.map((s) => (
               <div key={s.label} className="glass rounded-2xl p-5">
-                <AnimatedCounter value={s.value} suffix={s.suffix} />
+                <AnimatedCounter value={s.value} suffix={s.suffix} decimals={s.decimals} />
                 <p className="font-mono text-[11px] uppercase tracking-wide text-muted mt-2">
                   {s.label}
                 </p>
@@ -57,17 +56,17 @@ export default function About() {
           <div className="glass rounded-3xl p-8 h-full flex flex-col justify-between">
             <div>
               <p className="font-mono text-xs uppercase tracking-widest text-primary">
-                Currently
+                Most recent role
               </p>
               <p className="font-display text-2xl mt-3 text-text">Frontend Developer</p>
-              <p className="text-muted mt-1">at AppWorld Infotech</p>
+              <p className="text-muted mt-1">Bitfront Infotech</p>
             </div>
 
             <div className="mt-10 grid grid-cols-2 gap-y-4 font-mono text-xs">
               <span className="text-muted">Based in</span>
               <span className="text-text text-right">Surat, India</span>
               <span className="text-muted">Focus</span>
-              <span className="text-text text-right">Angular · React</span>
+              <span className="text-text text-right">Next.js · React</span>
               <span className="text-muted">GitHub</span>
               <span className="text-primary text-right">{profile.githubUsername}</span>
             </div>

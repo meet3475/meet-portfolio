@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import SectionHeading from "@/components/ui/SectionHeading";
 import { profile } from "@/data/portfolio";
 import { fadeUp, viewportOnce } from "@/lib/motion";
-import { FiMail, FiGithub, FiLinkedin, FiSend } from "react-icons/fi";
+import { FiMail, FiPhone, FiGithub, FiLinkedin, FiSend } from "react-icons/fi";
 
 export default function Contact() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
@@ -20,7 +20,7 @@ export default function Contact() {
   return (
     <section id="contact" className="container-px py-28">
       <SectionHeading
-        eyebrow="06 — Contact"
+        eyebrow="07 — Contact"
         title="Let's build something"
         description="Have a project, a role, or just a question about how a section was built? Reach out."
       />
@@ -39,6 +39,13 @@ export default function Contact() {
           >
             <FiMail className="text-primary" />
             <span className="text-sm text-muted">{profile.email}</span>
+          </a>
+          <a
+            href={`tel:${profile.phone.replace(/\s/g, "")}`}
+            className="flex items-center gap-3 glass rounded-xl p-4 hover:border-primary/40 transition-colors"
+          >
+            <FiPhone className="text-primary" />
+            <span className="text-sm text-muted">{profile.phone}</span>
           </a>
           <a
             href={profile.github}

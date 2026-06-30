@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import SectionHeading from "@/components/ui/SectionHeading";
 import { projects } from "@/data/portfolio";
 import { fadeUp, staggerContainer, viewportOnce } from "@/lib/motion";
+import { FiExternalLink, FiGithub } from "react-icons/fi";
 
 function ProjectCard({ project, index }: { project: (typeof projects)[number]; index: number }) {
   const [flipped, setFlipped] = useState(false);
@@ -45,9 +46,34 @@ function ProjectCard({ project, index }: { project: (typeof projects)[number]; i
         {/* Back */}
         <div className="absolute inset-0 glass rounded-2xl p-7 [backface-visibility:hidden] [transform:rotateY(180deg)] flex flex-col justify-between">
           <p className="text-muted leading-relaxed text-sm">{project.description}</p>
-          <p className="font-mono text-[11px] text-primary uppercase tracking-widest">
-            ← Tap to flip back
-          </p>
+
+          <div className="flex items-center justify-between">
+            <div className="flex gap-3">
+              {project.href && (
+                <a
+                  href={project.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  onClick={(e) => e.stopPropagation()}
+                  className="inline-flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-wide px-3 py-1.5 rounded-full border border-primary text-primary hover:bg-primary hover:text-bg transition-colors"
+                >
+                  <FiExternalLink size={12} /> Live
+                </a>
+              )}
+              {project.github && (
+                <a
+                  href={project.github}
+                  target="_blank"
+                  rel="noreferrer"
+                  onClick={(e) => e.stopPropagation()}
+                  className="inline-flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-wide px-3 py-1.5 rounded-full border border-border text-muted hover:border-primary hover:text-primary transition-colors"
+                >
+                  <FiGithub size={12} /> Code
+                </a>
+              )}
+            </div>
+            <p className="font-mono text-[11px] text-muted uppercase tracking-widest">← Flip</p>
+          </div>
         </div>
       </motion.div>
     </motion.div>
@@ -58,9 +84,9 @@ export default function Projects() {
   return (
     <section id="projects" className="container-px py-28">
       <SectionHeading
-        eyebrow="04 — Projects"
+        eyebrow="05 — Projects"
         title="Selected work"
-        description="Two builds that show the range &mdash; real-time communication and structured enterprise data."
+        description="Personal and freelance builds, each with a live demo or repo &mdash; tap a card to flip it."
       />
 
       <motion.div
@@ -68,7 +94,7 @@ export default function Projects() {
         whileInView="visible"
         viewport={viewportOnce}
         variants={staggerContainer}
-        className="grid sm:grid-cols-2 gap-6 mt-14"
+        className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-14"
       >
         {projects.map((project, i) => (
           <ProjectCard key={project.title} project={project} index={i} />

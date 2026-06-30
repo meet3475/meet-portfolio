@@ -6,10 +6,12 @@ import { motion, useInView } from "framer-motion";
 export default function AnimatedCounter({
   value,
   suffix = "",
+  decimals = 0,
   duration = 1.4,
 }: {
   value: number;
   suffix?: string;
+  decimals?: number;
   duration?: number;
 }) {
   const ref = useRef<HTMLSpanElement>(null);
@@ -25,7 +27,7 @@ export default function AnimatedCounter({
       if (start === null) start = timestamp;
       const progress = Math.min((timestamp - start) / (duration * 1000), 1);
       const eased = 1 - Math.pow(1 - progress, 3);
-      setDisplay(Math.round(eased * value));
+      setDisplay(eased * value);
       if (progress < 1) frame = requestAnimationFrame(step);
     };
 
@@ -35,7 +37,7 @@ export default function AnimatedCounter({
 
   return (
     <motion.span ref={ref} className="font-display text-4xl sm:text-5xl font-semibold text-text">
-      {display}
+      {display.toFixed(decimals)}
       <span className="text-primary">{suffix}</span>
     </motion.span>
   );

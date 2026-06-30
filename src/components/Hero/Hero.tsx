@@ -8,7 +8,7 @@ import { FiArrowDown, FiGithub, FiDownload } from "react-icons/fi";
 
 const Scene = dynamic(() => import("@/three/Scene"), { ssr: false });
 
-const ROLES = ["Frontend Developer", "Angular Developer", "React Developer", "Three.js Tinkerer"];
+const ROLES = ["Frontend Developer", "Next.js Developer", "React.js Developer", "Full-Stack Enthusiast"];
 
 function useTypewriter(words: string[]) {
   const [index, setIndex] = useState(0);
