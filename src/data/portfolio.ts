@@ -4,7 +4,7 @@ export const profile = {
   location: "Surat, Gujarat, India",
   tagline: "1.5 Years of Building Real Products",
   summary:
-    "I'm a frontend developer who likes shipping things people actually use \u2014 from CMS-driven marketing sites for international clients to a full ERP reporting module. Next.js and React are home base; Node, Express, and SQL/NoSQL round out the rest of the stack when a project needs it.",
+    "I'm a frontend developer who ships things people actually use — from CMS-driven marketing sites for international clients to full ERP reporting modules. Next.js and React are home base; Node, Express, and SQL/NoSQL round out the stack when a project needs it.",
   email: "meetdobariya480@gmail.com",
   phone: "+91 90167 58258",
   github: "https://github.com/meet3475",
@@ -17,7 +17,6 @@ export const navLinks = [
   { label: "About", href: "#about" },
   { label: "Skills", href: "#skills" },
   { label: "Experience", href: "#experience" },
-  { label: "Education", href: "#education" },
   { label: "Projects", href: "#projects" },
   { label: "Contact", href: "#contact" },
 ];
@@ -25,7 +24,7 @@ export const navLinks = [
 export const stats = [
   { value: 1.5, decimals: 1, suffix: "+", label: "Years experience" },
   { value: 8, decimals: 0, suffix: "+", label: "Projects delivered" },
-  { value: 2, decimals: 0, suffix: "", label: "Companies worked with" },
+  { value: 3, decimals: 0, suffix: "", label: "Companies worked at" },
   { value: 20, decimals: 0, suffix: "+", label: "Technologies used" },
 ];
 
@@ -59,7 +58,6 @@ export const skills: SkillCategory[] = [
       { name: "MongoDB", tag: "MDB" },
       { name: "PostgreSQL", tag: "PG" },
       { name: "MySQL", tag: "SQL" },
-      { name: "C Language", tag: "C" },
     ],
   },
   {
@@ -67,14 +65,13 @@ export const skills: SkillCategory[] = [
     items: [
       { name: "Optimizely CMS", tag: "OPT" },
       { name: "Znode CMS", tag: "ZND" },
-      { name: "Generic CMS", tag: "CMS" },
+      { name: "CMS", tag: "CMS" },
     ],
   },
   {
     group: "Tools & Hosting",
     items: [
-      { name: "Git", tag: "GIT" },
-      { name: "GitHub", tag: "GH" },
+      { name: "Git / GitHub", tag: "GIT" },
       { name: "GitLab", tag: "GL" },
       { name: "Bitbucket", tag: "BB" },
       { name: "Vercel", tag: "VC" },
@@ -88,55 +85,43 @@ export type ExperienceItem = {
   period: string;
   company: string;
   role: string;
+  current?: boolean;
   points: string[];
   tags: string[];
 };
 
 export const experience: ExperienceItem[] = [
   {
-    period: "6 months \u00b7 Nov 2024 \u2013 May 2025",
-    company: "SridixTechnology",
+    period: "June 2025 — Present",
+    company: "AppWorld Infotech",
     role: "Frontend Developer",
+    current: true,
     points: [
-      "Built the accounting module of an in-house ERP system, covering purchase & sales invoice reports, voucher reports, and ledger reports.",
-      "Implemented data-heavy report screens with React.js and Bootstrap, focused on clarity for finance teams reading them daily.",
+      "Currently building and maintaining frontend systems for enterprise clients.",
+      "Working with modern React and Next.js stacks to deliver production-grade interfaces.",
     ],
-    tags: ["React.js", "Bootstrap", "JavaScript", "CSS"],
+    tags: ["React.js", "Next.js", "TypeScript", "Tailwind"],
   },
   {
-    period: "12 months \u00b7 Nov 2024 \u2013 May 2025",
+    period: "May 2024 — May 2025",
     company: "Bitfront Infotech",
     role: "Frontend Developer",
     points: [
       "Built and maintained a dual-site travel platform for Altudo's client OAT Travel, sharing one Next.js + Tailwind codebase and Optimizely CMS across both properties.",
       "Set up Optimizely CMS content models so marketing teams could update pages without developer involvement.",
-      "Developed the Home and Solutions pages for Jensen Precast using Znode CMS's drag-and-drop Page Builder components.",
+      "Developed the Home and Solutions pages for Jensen Precast using Znode CMS drag-and-drop Page Builder components.",
     ],
     tags: ["Next.js", "TypeScript", "Tailwind", "Shadcn", "Optimizely CMS", "Znode CMS"],
   },
-];
-
-export type EducationItem = {
-  period: string;
-  title: string;
-  institute: string;
-};
-
-export const education: EducationItem[] = [
   {
-    period: "2017 \u2013 2018",
-    title: "S.S.C.",
-    institute: "G.G. Zadafiya Vidhyalay",
-  },
-  {
-    period: "2019 \u2013 2020",
-    title: "H.S.C.",
-    institute: "G.G. Zadafiya Vidhyalay",
-  },
-  {
-    period: "2023 \u2013 2024",
-    title: "Master in Full Stack Development",
-    institute: "BIT Khanan IT Education",
+    period: "Nov 2023 — May 2024",
+    company: "SridixTechnology",
+    role: "Frontend Developer",
+    points: [
+      "Built the accounting module of an in-house ERP system covering purchase & sales invoice reports, voucher reports, and ledger reports.",
+      "Implemented data-heavy report screens with React.js and Bootstrap, focused on clarity for finance teams.",
+    ],
+    tags: ["React.js", "Bootstrap", "JavaScript", "CSS"],
   },
 ];
 
@@ -150,9 +135,16 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    title: "OAT Travel",
+    description:
+      "Built and maintained a dual-site international travel platform for Altudo's client, sharing one Next.js + Tailwind codebase and Optimizely CMS for dynamic content management across both properties.",
+    stack: ["Next.js", "TypeScript", "Tailwind", "Shadcn", "Optimizely CMS"],
+    href: "https://www.oattravel.com/",
+  },
+  {
     title: "Marriage Biodata Maker",
     description:
-      "Fill in your details on a guided form and generate a print-ready PDF marriage biodata instantly. Built with SEO in mind \u2014 proper metadata and a sitemap throughout.",
+      "Fill in your details on a guided form and generate a print-ready PDF marriage biodata instantly. Built with full SEO — metadata and sitemap throughout.",
     stack: ["Next.js", "Tailwind CSS", "JavaScript"],
     href: "https://marriagebiodatamaker.com/",
   },
@@ -188,24 +180,9 @@ export const projects: Project[] = [
 ];
 
 export const services = [
-  {
-    title: "Frontend Development",
-    description: "Next.js and React applications built with TypeScript and Tailwind.",
-  },
-  {
-    title: "Full-Stack Web Apps",
-    description: "End-to-end builds powered by Node, Express, and SQL or NoSQL databases.",
-  },
-  {
-    title: "CMS-Driven Websites",
-    description: "Marketer-friendly content setups on Optimizely, Znode, or a custom CMS.",
-  },
-  {
-    title: "API Integration",
-    description: "Clean, typed connections between your frontend and the services behind it.",
-  },
-  {
-    title: "Performance & SEO",
-    description: "Metadata, sitemaps, and clean markup that search engines and Lighthouse reward.",
-  },
+  { title: "Frontend Development", description: "Next.js and React apps built with TypeScript and Tailwind." },
+  { title: "Full-Stack Web Apps", description: "End-to-end builds with Node, Express, and SQL/NoSQL databases." },
+  { title: "CMS-Driven Websites", description: "Marketer-friendly setups on Optimizely, Znode, or custom CMS." },
+  { title: "API Integration", description: "Clean, typed connections between frontend and backend services." },
+  { title: "Performance & SEO", description: "Metadata, sitemaps, and clean markup that Lighthouse rewards." },
 ];
