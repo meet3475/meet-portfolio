@@ -17,6 +17,7 @@ export const navLinks = [
   { label: "About", href: "#about" },
   { label: "Skills", href: "#skills" },
   { label: "Experience", href: "#experience" },
+  { label: "Education", href: "#education" },
   { label: "Projects", href: "#projects" },
   { label: "Contact", href: "#contact" },
 ];
@@ -122,6 +123,30 @@ export const experience: ExperienceItem[] = [
       "Implemented data-heavy report screens with React.js and Bootstrap, focused on clarity for finance teams.",
     ],
     tags: ["React.js", "Bootstrap", "JavaScript", "CSS"],
+  },
+];
+
+export type EducationItem = {
+  period: string;
+  title: string;
+  institute: string;
+};
+
+export const education: EducationItem[] = [
+  {
+    period: "2017 \u2013 2018",
+    title: "S.S.C.",
+    institute: "G.G. Zadafiya Vidhyalay",
+  },
+  {
+    period: "2019 \u2013 2020",
+    title: "H.S.C.",
+    institute: "G.G. Zadafiya Vidhyalay",
+  },
+  {
+    period: "2023 \u2013 2024",
+    title: "Master in Full Stack Development",
+    institute: "BIT Khanan IT Education",
   },
 ];
 
